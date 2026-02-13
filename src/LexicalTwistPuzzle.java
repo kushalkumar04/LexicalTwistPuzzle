@@ -25,5 +25,14 @@ public class LexicalTwistPuzzle {
             return;
         }
 
+        // Reverse relationship check
+        String reversedWord = new StringBuilder(word1).reverse().toString();
+
+        if (reversedWord.equalsIgnoreCase(word2)) {
+            System.out.println("The second word is the reverse of the first word.");
+        } else {
+            System.out.println("The words are not reverse of each other.");
+        }
+
     }
 }
