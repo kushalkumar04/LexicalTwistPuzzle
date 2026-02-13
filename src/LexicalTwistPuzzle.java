@@ -25,7 +25,6 @@ public class LexicalTwistPuzzle {
             return;
         }
 
-        // Reverse relationship check
         String reversedWord = new StringBuilder(word1).reverse().toString();
 
         if (reversedWord.equalsIgnoreCase(word2)) {
@@ -38,8 +37,28 @@ public class LexicalTwistPuzzle {
 
         } else {
 
-            System.out.println("The words are not reverse of each other.");
+            // Combine words
+            String combined = (word1 + word2).toUpperCase();
 
+            int vowelCount = 0;
+            int consonantCount = 0;
+
+            for (int i = 0; i < combined.length(); i++) {
+
+                char ch = combined.charAt(i);
+
+                if (ch >= 'A' && ch <= 'Z') {
+
+                    if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+                        vowelCount++;
+                    } else {
+                        consonantCount++;
+                    }
+                }
+            }
+
+            System.out.println("Vowels: " + vowelCount);
+            System.out.println("Consonants: " + consonantCount);
         }
     }
 }
